@@ -1,25 +1,16 @@
-import logo from './logo.svg';
+import React, { Suspense } from "react";
 import './App.css';
+
+import PokemonPager from "./Pokemon";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <React.Suspense fallback={<div className="suspense">Loading...</div>}>
+        <PokemonPager />
+      </React.Suspense>
   );
+
 }
 
 export default App;
